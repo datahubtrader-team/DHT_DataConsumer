@@ -1,0 +1,30 @@
+{
+  "name": "dht_dataconsumer",
+  "version": "1.0.0",
+  "description": "This service consumes data from data providers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/datahubtrader-team/DHT_DataConsumer.git"
+  },
+  "author": "DrJay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/datahubtrader-team/DHT_DataConsumer/issues"
+  },
+  "homepage": "https://github.com/datahubtrader-team/DHT_DataConsumer#readme",
+  "dependencies": {
+    "amqplib": "^0.5.3",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.2.7",
+    "mongoose": "^5.6.3",
+    "opn": "^6.0.0",
+    "rest-facade": "^1.11.0",
+    "swagger-ui-express": "^4.0.7"
+  }
+}
