@@ -53,9 +53,10 @@ function SendOffers(requestedPlug) {
         var myquery = { plug: requestedPlug }; //requestedPlug
         var offer = {
             "buy_data": requestedPlug,
-            "value": "0.00"
+            "value": "0.00",
+            "offerAccepted": null
         };
-        dbo.collection("users").update(myquery, { $push: { offer } }, function(err, res) {
+        dbo.collection("users").updateMany(myquery, { $push: { offer } }, function(err, res) {
             if (err) throw err;
             //console.log(res);
             db.close();
@@ -69,6 +70,7 @@ function SendOffers(requestedPlug) {
 
 
 // Retrieve and return all SearchRequests from the database.
+// TODO: Return searches that match the Buyers Id and email
 exports.findAll = (req, res) => {
     SearchRequest.find()
         .then(SearchRequest => {
