@@ -5,7 +5,8 @@ const searchRequestSchema = mongoose.Schema({
     participant_min: String,
     participant_max: String,
     activity: String,
-    deadline: String
+    deadline: String,
+    buyerId: String
 }, {
     timestamps: true
 });

@@ -24,7 +24,7 @@ node server.js
 make run-all
 ```
 
-## Run the dataprovider API
+## Run the DataConsumer API
 **You can browse the api at:** <http://localhost:5000>
 
 Here are the following API endpoints:

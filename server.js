@@ -48,7 +48,7 @@ app.all('', function(req, res, next) {
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-opn('http://localhost:4020/api-docs')
+opn('http://localhost:4025/api-docs')
 
 // listen for requests
 const port = 4025;
