@@ -6,6 +6,7 @@ const searchRequestSchema = mongoose.Schema({
     participant_max: String,
     activity: String,
     deadline: String,
+    value: String,
     buyerId: String
 }, {
     timestamps: true

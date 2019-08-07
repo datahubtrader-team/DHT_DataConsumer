@@ -36,6 +36,7 @@ exports.create = (req, res) => {
         participant_min: req.body.participant_min,
         participant_max: req.body.participant_max,
         activity: req.body.activity,
+        value: req.body.value,
         deadline: req.body.deadline,
         buyerId: req.body.buyerId
     });
@@ -45,8 +46,9 @@ exports.create = (req, res) => {
         .then(data => {
             res.send(data);
             logger.info("Response body: " + data);
-            SendOffers(data._id, data.search, data.buyerId);
+            SendOffers(data._id, data.search, data.value, data.buyerId);
             console.log(data._id);
+            console.log(data.value);
         }).catch(err => {
             res.status(500).send({
                 message: err.message || "Some error occurred while creating a data search request."
@@ -55,7 +57,7 @@ exports.create = (req, res) => {
 };
 
 //Send Offers to data owners
-function SendOffers(OfferTradeId, requestedPlug, buyerId) {
+function SendOffers(OfferTradeId, requestedPlug, valueofdata, buyerId) {
 
     // Save offers to Owners records in the OwnerDB
     MongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
@@ -70,7 +72,7 @@ function SendOffers(OfferTradeId, requestedPlug, buyerId) {
         var offer = {
             "offerId": OfferTradeId,
             "buy_data": requestedPlug,
-            "value": "0.00",
+            "value": valueofdata,
             "offerAccepted": null,
             "trade": null,
             "buyerId": buyerId
