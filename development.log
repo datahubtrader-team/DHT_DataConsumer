@@ -7,3 +7,136 @@ info [Sun Aug 04 2019 23:07:13 GMT+0100 (British Summer Time)]  Response body: [
 info [Sun Aug 04 2019 23:08:27 GMT+0100 (British Summer Time)]  GET AWS URLs
 info [Sun Aug 04 2019 23:08:27 GMT+0100 (British Summer Time)]  Request body : [object Object]
 info [Sun Aug 04 2019 23:08:27 GMT+0100 (British Summer Time)]  Response body: [object Object]
+
+info [Tue Aug 06 2019 10:38:56 GMT+0100 (British Summer Time)]  Data search request - POST /search-requests endpoint
+info [Tue Aug 06 2019 10:38:56 GMT+0100 (British Summer Time)]  Request payload:  { search: 'facebook',
+  participant_min: 1,
+  participant_max: 2,
+  activity: 'test',
+  deadline: '2019-08-29',
+  buyerId: '5d39a818372688f09a911c1a',
+  message: 'search' }
+info [Tue Aug 06 2019 10:38:56 GMT+0100 (British Summer Time)]  Response body: { _id: 5d494ab06743a07dac317d96,
+  search: 'facebook',
+  participant_min: '1',
+  participant_max: '2',
+  activity: 'test',
+  deadline: '2019-08-29',
+  buyerId: '5d39a818372688f09a911c1a',
+  createdAt: 2019-08-06T09:38:56.295Z,
+  updatedAt: 2019-08-06T09:38:56.295Z,
+  __v: 0 }
+info [Tue Aug 06 2019 10:38:56 GMT+0100 (British Summer Time)]  Offer object appended to Owner's record: [object Object]
+info [Tue Aug 06 2019 10:38:56 GMT+0100 (British Summer Time)]  Offer object response: {"result":{"n":0,"nModified":0,"ok":1},"connection":{"id":1,"host":"localhost","port":27017},"modifiedCount":0,"upsertedId":null,"upsertedCount":0,"matchedCount":0,"n":0,"nModified":0,"ok":1}
+info [Tue Aug 06 2019 10:38:59 GMT+0100 (British Summer Time)]  Request: { _id: 5d4315e06ecdb027879263b9,
+  search: 'spotify',
+  participant_min: '1',
+  participant_max: '1',
+  activity: 'test',
+  deadline: '2019-08-28T23:00:00.000Z',
+  buyerId: '5d39a818372688f09a911c1a',
+  createdAt: 2019-08-01T16:40:00.921Z,
+  updatedAt: 2019-08-01T16:40:00.921Z,
+  __v: 0 },{ _id: 5d494ab06743a07dac317d96,
+  search: 'facebook',
+  participant_min: '1',
+  participant_max: '2',
+  activity: 'test',
+  deadline: '2019-08-29',
+  buyerId: '5d39a818372688f09a911c1a',
+  createdAt: 2019-08-06T09:38:56.295Z,
+  updatedAt: 2019-08-06T09:38:56.295Z,
+  __v: 0 }
+info [Tue Aug 06 2019 10:43:34 GMT+0100 (British Summer Time)]  Request: { _id: 5d4315e06ecdb027879263b9,
+  search: 'spotify',
+  participant_min: '1',
+  participant_max: '1',
+  activity: 'test',
+  deadline: '2019-08-28T23:00:00.000Z',
+  buyerId: '5d39a818372688f09a911c1a',
+  createdAt: 2019-08-01T16:40:00.921Z,
+  updatedAt: 2019-08-01T16:40:00.921Z,
+  __v: 0 },{ _id: 5d494ab06743a07dac317d96,
+  search: 'facebook',
+  participant_min: '1',
+  participant_max: '2',
+  activity: 'test',
+  deadline: '2019-08-29',
+  buyerId: '5d39a818372688f09a911c1a',
+  createdAt: 2019-08-06T09:38:56.295Z,
+  updatedAt: 2019-08-06T09:38:56.295Z,
+  __v: 0 }
+info [Tue Aug 06 2019 10:43:36 GMT+0100 (British Summer Time)]  GET AWS URLs
+info [Tue Aug 06 2019 10:43:36 GMT+0100 (British Summer Time)]  Request body : [object Object]
+info [Tue Aug 06 2019 10:43:36 GMT+0100 (British Summer Time)]  Response body: [object Object]
+info [Tue Aug 06 2019 10:43:39 GMT+0100 (British Summer Time)]  Request: { _id: 5d4315e06ecdb027879263b9,
+  search: 'spotify',
+  participant_min: '1',
+  participant_max: '1',
+  activity: 'test',
+  deadline: '2019-08-28T23:00:00.000Z',
+  buyerId: '5d39a818372688f09a911c1a',
+  createdAt: 2019-08-01T16:40:00.921Z,
+  updatedAt: 2019-08-01T16:40:00.921Z,
+  __v: 0 },{ _id: 5d494ab06743a07dac317d96,
+  search: 'facebook',
+  participant_min: '1',
+  participant_max: '2',
+  activity: 'test',
+  deadline: '2019-08-29',
+  buyerId: '5d39a818372688f09a911c1a',
+  createdAt: 2019-08-06T09:38:56.295Z,
+  updatedAt: 2019-08-06T09:38:56.295Z,
+  __v: 0 }
+info [Tue Aug 06 2019 10:43:40 GMT+0100 (British Summer Time)]  GET AWS URLs
+info [Tue Aug 06 2019 10:43:40 GMT+0100 (British Summer Time)]  Request body : [object Object]
+info [Tue Aug 06 2019 10:43:40 GMT+0100 (British Summer Time)]  Response body: [object Object]
+info [Tue Aug 06 2019 10:43:41 GMT+0100 (British Summer Time)]  Request: { _id: 5d4315e06ecdb027879263b9,
+  search: 'spotify',
+  participant_min: '1',
+  participant_max: '1',
+  activity: 'test',
+  deadline: '2019-08-28T23:00:00.000Z',
+  buyerId: '5d39a818372688f09a911c1a',
+  createdAt: 2019-08-01T16:40:00.921Z,
+  updatedAt: 2019-08-01T16:40:00.921Z,
+  __v: 0 },{ _id: 5d494ab06743a07dac317d96,
+  search: 'facebook',
+  participant_min: '1',
+  participant_max: '2',
+  activity: 'test',
+  deadline: '2019-08-29',
+  buyerId: '5d39a818372688f09a911c1a',
+  createdAt: 2019-08-06T09:38:56.295Z,
+  updatedAt: 2019-08-06T09:38:56.295Z,
+  __v: 0 }
+
+
+
+info [Wed Aug 07 2019 11:12:47 GMT+0100 (British Summer Time)]  GET AWS URLs
+info [Wed Aug 07 2019 11:12:47 GMT+0100 (British Summer Time)]  Request body : [object Object]
+info [Wed Aug 07 2019 11:12:47 GMT+0100 (British Summer Time)]  Response body: [object Object]
+info [Wed Aug 07 2019 11:13:40 GMT+0100 (British Summer Time)]  Request: { _id: 5d4315e06ecdb027879263b9,
+  search: 'spotify',
+  participant_min: '1',
+  participant_max: '1',
+  activity: 'test',
+  deadline: '2019-08-28T23:00:00.000Z',
+  buyerId: '5d39a818372688f09a911c1a',
+  createdAt: 2019-08-01T16:40:00.921Z,
+  updatedAt: 2019-08-01T16:40:00.921Z,
+  __v: 0 },{ _id: 5d494ab06743a07dac317d96,
+  search: 'facebook',
+  participant_min: '1',
+  participant_max: '2',
+  activity: 'test',
+  deadline: '2019-08-29',
+  buyerId: '5d39a818372688f09a911c1a',
+  createdAt: 2019-08-06T09:38:56.295Z,
+  updatedAt: 2019-08-06T09:38:56.295Z,
+  __v: 0 }
+
+info [Wed Aug 07 2019 11:21:10 GMT+0100 (British Summer Time)]  GET AWS URLs
+info [Wed Aug 07 2019 11:21:10 GMT+0100 (British Summer Time)]  Request body : [object Object]
+info [Wed Aug 07 2019 11:21:10 GMT+0100 (British Summer Time)]  Response body: [object Object]
+

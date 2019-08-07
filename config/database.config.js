@@ -1,3 +1,4 @@
+require('dotenv').config()
 module.exports = {
-    url: 'mongodb://localhost:27017/BuyerDB'
+    url: process.env.DHT_DB_LOCAL
 }

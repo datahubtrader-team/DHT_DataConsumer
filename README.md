@@ -3,36 +3,36 @@ This service handles search requests for data transcations and consumes data fro
 
 A full Restful CRUD API for managing dataproviders written in Node.js, Express and MongoDB.
 
-![Data providers framework architecture](DataProvider.jpeg)
+![Data consumer service](docs/images/DHT_DataConsumer_service.png)
 
 ## Steps to setup the service
 
 **Install dependencies**
 
 ```bash
-npm install
+$ npm install
 ```
 **Run Server**
 
 ```bash
-node server.js
+$ npm start
 ```
 
 **Run the service using make**
 
 ```bash
-make run-all
+$ make run-all
 ```
 
 ## Run the DataConsumer API
-**You can browse the api at:** <http://localhost:5000>
+**You can browse the api at:** <http://localhost:4025>
 
 Here are the following API endpoints:
 
-1.	Create a new dataprovider: **POST** http://localhost:5000/dataproviders
-2.	Retrieve all dataproviders: **GET** http://localhost:5000/dataproviders
-3.	Retrieve a single dataprovider with dataproviderId: **GET** http://localhost:5000/dataproviders/{dataproviderId}
-4. Update a dataprovider with dataproviderId: **PUT** http://localhost:5000/dataproviders/{dataproviderId}
-5. Delete a dataprovider with dataproviderId: **DELETE** http://localhost:5000/dataproviders/{dataproviderId}
+![Swagger docs](docs/images/swagger_screenshot.png)
 
 ## Run unit tests
+
+```bash
+$ npm test
+```

@@ -1,22 +1,25 @@
+var createError = require('http-errors');
 const express = require('express');
 const bodyParser = require('body-parser');
+var logger = require('morgan');
 swaggerUi = require('swagger-ui-express'),
     swaggerDocument = require('./swagger.json');
-
-const opn = require('opn')
+const opn = require('opn');
 
 // create express app
 const app = express();
 const expressSwagger = require('express-swagger-generator')(app);
 
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }))
+// parse application/x-www-form-urlencoded && parse application/json
+//app.use(bodyParser.json())
+//app.use(bodyParser.urlencoded({ extended: true }))
 
-// parse application/json
-app.use(bodyParser.json())
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 // Configuring the database
-const dbConfig = require('./config/database.config.js');
+const dbConfig = require('../config/database.config');
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
@@ -37,7 +40,7 @@ app.get('/', (req, res) => {
 });
 
 //require('./app/routes/dataprovider.routes.js')(app);
-require('./app/routes/searchrequest.routes.js')(app);
+require('./routes/searchrequest.routes.js')(app);
 
 app.all('', function(req, res, next) {
     res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
@@ -45,9 +48,6 @@ app.all('', function(req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
     res.header('Vary', "Origin");
 });
-
-
-//app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 const port = 4025;
 let options = {
@@ -74,7 +74,7 @@ let options = {
         }
     },
     basedir: __dirname, //app absolute path
-    files: ['./app/routes/searchrequest.routes.js'] //Path to the API handle folder
+    files: ['./routes/searchrequest.routes.js'] //Path to the API handle folder
 };
 
 expressSwagger(options)
@@ -84,3 +84,5 @@ opn('http://localhost:' + port + '/api-docs')
 app.listen(port, () => {
     console.log("Server is listening on port " + port);
 });
+
+module.exports = app;

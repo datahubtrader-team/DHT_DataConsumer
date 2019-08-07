@@ -1,35 +1,37 @@
 {
-  "name": "dht_dataconsumer",
-  "version": "1.0.0",
-  "description": "This service consumes data from data providers",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/datahubtrader-team/DHT_DataConsumer.git"
-  },
-  "author": "DrJay",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/datahubtrader-team/DHT_DataConsumer/issues"
-  },
-  "homepage": "https://github.com/datahubtrader-team/DHT_DataConsumer#readme",
-  "dependencies": {
-    "amqplib": "^0.5.3",
-    "body-parser": "^1.19.0",
-    "bson-objectid": "^1.3.0",
-    "crypto-random-string": "^3.0.1",
-    "dotenv": "^8.0.0",
-    "express": "^4.17.1",
-    "express-swagger-generator": "^1.1.15",
-    "logger": "0.0.1",
-    "mongodb": "^3.2.7",
-    "mongoose": "^5.6.3",
-    "opn": "^6.0.0",
-    "rest-facade": "^1.11.0",
-    "swagger-ui-express": "^4.0.7"
-  }
+    "name": "dht_dataconsumer",
+    "version": "1.0.0",
+    "description": "This service consumes data from data providers",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node src/app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/datahubtrader-team/DHT_DataConsumer.git"
+    },
+    "author": "DrJay",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/datahubtrader-team/DHT_DataConsumer/issues"
+    },
+    "homepage": "https://github.com/datahubtrader-team/DHT_DataConsumer#readme",
+    "dependencies": {
+        "amqplib": "^0.5.3",
+        "body-parser": "^1.19.0",
+        "bson-objectid": "^1.3.0",
+        "crypto-random-string": "^3.0.1",
+        "dotenv": "^8.0.0",
+        "express": "^4.17.1",
+        "express-swagger-generator": "^1.1.15",
+        "http-errors": "^1.7.3",
+        "logger": "0.0.1",
+        "mongodb": "^3.2.7",
+        "mongoose": "^5.6.3",
+        "morgan": "^1.9.1",
+        "opn": "^6.0.0",
+        "rest-facade": "^1.11.0",
+        "swagger-ui-express": "^4.0.7"
+    }
 }
