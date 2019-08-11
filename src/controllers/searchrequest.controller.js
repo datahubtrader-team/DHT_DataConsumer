@@ -46,9 +46,9 @@ exports.create = (req, res) => {
         .then(data => {
             res.send(data);
             logger.info("Response body: " + data);
-            SendOffers(data._id, data.search, data.value, data.buyerId);
+            SendOffers(data._id, data.search, data.value, data.buyerId, data.deadline);
             console.log(data._id);
-            console.log(data.value);
+            console.log(data.deadline);
         }).catch(err => {
             res.status(500).send({
                 message: err.message || "Some error occurred while creating a data search request."
@@ -57,7 +57,7 @@ exports.create = (req, res) => {
 };
 
 //Send Offers to data owners
-function SendOffers(OfferTradeId, requestedPlug, valueofdata, buyerId) {
+function SendOffers(OfferTradeId, requestedPlug, valueofdata, buyerId, deadlinedate) {
 
     // Save offers to Owners records in the OwnerDB
     MongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
@@ -75,7 +75,8 @@ function SendOffers(OfferTradeId, requestedPlug, valueofdata, buyerId) {
             "value": valueofdata,
             "offerAccepted": null,
             "trade": null,
-            "buyerId": buyerId
+            "buyerId": buyerId,
+            "deadline": deadlinedate
         };
 
         logger.info("Offer object appended to Owner's record: " + offer);
@@ -140,7 +141,7 @@ exports.addAcceptedOffersComparewithParticipantMin = (req, res) => {
                 //TODO: If count == participant_min using the searchrequests Id
                 var participantMin = parseInt(result[0].participant_min);
                 console.log(participantMin);
-                if (count == participantMin) {
+                if (count >= participantMin) {
                     console.log("send trades");
 
                     //TODO: Send trades to Owners by Owner's Id
@@ -148,7 +149,7 @@ exports.addAcceptedOffersComparewithParticipantMin = (req, res) => {
 
                     console.log(OwnersID);
                     console.log(buyData);
-                    sendtrades(buyData);
+                    sendtrades(OwnersID, buyData);
                 } else {
                     res.send({ error: "No equal" });
                     console.log("No equal");
@@ -161,14 +162,14 @@ exports.addAcceptedOffersComparewithParticipantMin = (req, res) => {
 
 };
 
-function sendtrades(requestedTrade) {
+function sendtrades(OwnersID, requestedTrade) {
     MongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
         if (err) throw err;
         var dbo = db.db("OwnerDB");
 
         var myquery = {
-            "offer.buy_data": requestedTrade
-                //"email": req.query.email
+            "offer.buy_data": requestedTrade,
+            "_id": OwnersID
         };
 
         console.log(myquery);
