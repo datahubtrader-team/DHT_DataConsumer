@@ -49,6 +49,7 @@ exports.create = (req, res) => {
             SendOffers(data._id, data.search, data.value, data.buyerId, data.deadline);
             console.log(data._id);
             console.log(data.deadline);
+            console.log(data.value);
         }).catch(err => {
             res.status(500).send({
                 message: err.message || "Some error occurred while creating a data search request."

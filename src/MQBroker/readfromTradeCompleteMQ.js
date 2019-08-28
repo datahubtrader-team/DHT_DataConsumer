@@ -23,7 +23,11 @@ amqp.connect('amqp://localhost', function(error0, connection) {
         console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", queue);
 
         channel.consume(queue, function(msg) {
-            console.log(" [x] Received %s", msg.content.toString());
+            //let awsurl = msg.content;
+            var obj = JSON.parse(msg.content.toString())
+            console.log(" [x] Received %s", obj.AWSLink);
+
+
             saveCompletedTradetoDB(msg.content.toString());
 
             //TODO: Get the Buyer Id or email to do a DB lookup before storing the AWS URL
@@ -40,17 +44,25 @@ function saveCompletedTradetoDB(awsurl) {
         if (err) throw err;
         var dbo = db.db("BuyerDB");
 
-        var BuyerId = { _id: ObjectID("5d39a818372688f09a911c1a") };
-        var newvalues = { $push: { AWSURL: { url: awsurl } } };
-        //TODO: Need to query with the id of the offersandtrade object
-        dbo.collection("users").findOneAndUpdate(BuyerId, newvalues, function(err, doc) {
-            if (err) throw err;
-            console.log("Save AWS URL");
+        console.log(awsurl);
+        var obj = JSON.parse(awsurl);
 
-            //TODO: Add AWS URL to completed queue after storing it to BuyerDB
+        console.log(obj.AWSLink);
 
-            db.close();
-        });
+        if (obj.buyerId == "123") {
+
+            var BuyerId = { _id: ObjectID("5d39a818372688f09a911c1a") };
+            var newvalues = { $push: { AWSURL: { url: obj.AWSLink } } };
+            //TODO: Need to query with the id of the offersandtrade object
+            dbo.collection("users").findOneAndUpdate(BuyerId, newvalues, function(err, doc) {
+                if (err) throw err;
+                console.log("Save AWS URL");
+
+                //TODO: Add AWS URL to completed queue after storing it to BuyerDB
+
+                db.close();
+            });
+        }
 
     });
 }
