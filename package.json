@@ -31,7 +31,7 @@
         "mongoose": "^5.6.3",
         "morgan": "^1.9.1",
         "opn": "^6.0.0",
-        "rest-facade": "^1.11.0",
+        "rest-facade": "^1.16.3",
         "swagger-ui-express": "^4.0.7"
     }
 }
